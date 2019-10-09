@@ -36,7 +36,7 @@ createButton('Bouton 2');
 for (var i = 0; i < 3; i++) {
   setTimeout(() => {
     console.log(i);
-  }, 0);
+  }, 1000);
 }
 
 // 1sec ...  0 1 2

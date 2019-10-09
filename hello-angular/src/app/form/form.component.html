@@ -1,0 +1,13 @@
+<form (submit)="handleSubmit($event)">
+    <p>
+        <label>Prénom</label>
+        <input type="text" name="prenom" [value]="contact.prenom" (input)="contact.prenom = $event.target.value">
+    </p>
+    <p>
+        <label>Nom</label>
+        <input type="text" name="nom" [value]="contact.nom" (input)="contact.nom = $event.target.value">
+    </p>
+    <p>
+        <button type="submit">+</button>
+    </p>
+</form>

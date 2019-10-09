@@ -7,6 +7,13 @@
 const coords = {
   x: 1,
   y: 2,
+  sum() {}
+};
+
+const coords2 = {
+  x: 1,
+  y: 2,
+  sum() {}
 };
 
 // extendre un objet
@@ -30,7 +37,7 @@ for (const key in coords) {
 /*
 function Contact(prenom) {
   // pseudo variable (créé automatiquement au moment de l'appel)
-  // arguments, this
+  // arguments, this, new.target, super
   this.prenom = prenom;
 }
 
@@ -42,7 +49,9 @@ class Contact {
   constructor(prenom) {
     // pseudo variable (créé automatiquement au moment de l'appel)
     // arguments, this
-    this.prenom = prenom;
+    //if (prenom.length > 3) {
+      this.prenom = prenom;
+    //}
   }
   hello() {
     return `Hello ${this.prenom}`;
@@ -54,6 +63,13 @@ const romain = new Contact('Romain');
 console.log(typeof Contact); // function
 console.log(typeof romain); // object
 console.log(romain.hello()); // Hello Romain
+
+console.log(typeof romain.prenom !== undefined); // true
+console.log(typeof romain.hello !== undefined); // true
+console.log(typeof romain.hasOwnProperty !== undefined); // true
+console.log(romain.hasOwnProperty('prenom')); // true
+console.log(romain.hasOwnProperty('hello')); // false
+console.log(romain.hasOwnProperty('hasOwnProperty')); // false
 
 const jean = new Contact('Jean');
 console.log(jean.hello()); // Hello Jean

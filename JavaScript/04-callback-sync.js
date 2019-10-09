@@ -5,9 +5,9 @@ function hello(name, i) {
 const prenoms = ['Jean', 'Pierre', 'Eric'];
 
 prenoms
-  .filter((name) => name.length === 4)
-  .map((name) => name.toUpperCase())
-  .forEach(hello);
+  .filter((name) => name.length === 4) // cb('Jean', 0)
+  .map((name) => name.toUpperCase()) // cb('Jean', 0)
+  .forEach(hello); // cb('Jean', 0)
 console.log('FIN');
 
 // pile d'appels

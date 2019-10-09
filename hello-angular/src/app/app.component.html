@@ -1,7 +1,15 @@
 <h1>Hello {{title}}</h1>
+<!-- <app-hello name="Romain" class="test"></app-hello>
+<app-hello [name]="'Romain'"></app-hello>
+<app-hello [name]="false"></app-hello>
+<app-hello [name]="123"></app-hello>
+<app-hello [name]="title.toUpperCase()"></app-hello>
+<app-hello [name]="title + '!!!!'"></app-hello> -->
 <app-hello [name]="title"></app-hello>
 <app-counter></app-counter>
 <app-select 
     [items]="['Toto', 'Titi', 'Tata']"
     (itemChange)="title = $event"
     ></app-select>
+
+<app-form></app-form>
