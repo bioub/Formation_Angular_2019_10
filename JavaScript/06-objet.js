@@ -73,3 +73,17 @@ console.log(romain.hasOwnProperty('hasOwnProperty')); // false
 
 const jean = new Contact('Jean');
 console.log(jean.hello()); // Hello Jean
+
+// Cloner un objet
+// En ES6
+const clone = Object.assign({}, romain);
+console.log(clone.prenom); // Romain
+console.log(clone === romain); // false
+
+// En ES6
+const nbs = [2, 3, 4];
+const cloneNbs = [1, ...nbs, 5];
+
+// En ES8 (SPREAD Operator)
+const cloneEs8 = {...romain, nom: 'Bohdanowicz'};
+
