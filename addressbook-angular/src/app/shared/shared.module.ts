@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClockComponent } from './clock/clock.component';
-
+// import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -10,7 +10,8 @@ import { ClockComponent } from './clock/clock.component';
     CommonModule
   ],
   exports: [
-    ClockComponent
+    ClockComponent,
+    // MatListModule
   ]
 })
 export class SharedModule { }

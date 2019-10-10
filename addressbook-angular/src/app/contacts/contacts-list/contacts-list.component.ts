@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { HttpClient } from "@angular/common/http";
+import { Contact } from '../model';
 
 @Component({
   selector: 'app-contacts-list',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-  constructor() { }
+  contacts: Contact[] = [];
+
+  constructor(
+    private title: Title,
+    private httpClient: HttpClient
+  ) {}
 
   ngOnInit() {
+    this.title.setTitle('Liste des contacts');
+    this.httpClient.get<Contact[]>('https://jsonplaceholder.typicode.com/users')
+        .subscribe((contacts) => {
+          this.contacts = contacts;
+        });
   }
 
 }

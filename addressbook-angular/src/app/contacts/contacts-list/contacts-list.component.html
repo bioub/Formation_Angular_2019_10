@@ -1,1 +1,9 @@
-<p>contacts-list works!</p>
+<a mat-raised-button routerLink="add">Ajouter</a>
+
+<mat-nav-list>
+  <a [routerLink]="[c.id]"
+     mat-list-item
+     *ngFor="let c of contacts">
+     {{c.name}}
+    </a>
+</mat-nav-list>
