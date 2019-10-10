@@ -7,6 +7,17 @@ import { Todo } from './todo';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  /*
+  Exercice :
+  Envoyer un requete GET vers
+  https://jsonplaceholder.typicode.com/todos
+  Transformer les résultats si besoin pour matcher
+  votre format de données ex :
+  this.todos = todos
+    .map((c) => ({id: c.id, text: c.title, completed: c.completed}));
+  */
+
   todos: Todo[] = [{
     id: 123,
     text: 'Pain',

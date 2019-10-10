@@ -21,7 +21,7 @@ export class ContactsListComponent implements OnInit {
     this.title.setTitle('Liste des contacts');
     this.httpClient.get<Contact[]>('https://jsonplaceholder.typicode.com/users')
         .subscribe((contacts) => {
-          this.contacts = contacts;
+          this.contacts = contacts// .map((c) => ({id: c.id, name: c.name}));
         });
   }
 
