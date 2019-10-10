@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
