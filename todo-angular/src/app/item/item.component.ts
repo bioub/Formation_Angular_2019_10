@@ -16,4 +16,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngDoCheck() {
+    console.log('check item');
+  }
+
 }

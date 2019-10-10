@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Todo } from '../todo';
 
 @Component({
@@ -8,7 +8,7 @@ import { Todo } from '../todo';
 })
 export class FormComponent implements OnInit {
 
-  todo = new Todo();
+  @Input() todo = new Todo();
 
   @Output() todoChange = new EventEmitter<Todo>();
 

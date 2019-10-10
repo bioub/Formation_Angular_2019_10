@@ -1,2 +1,12 @@
-<a routerLink="/contacts" routerLinkActive="current">Contacts</a>
+<!--
+  Exercice:
+  - Créer un composant Home dans core
+  - Créer une route / (path: '') dans AppRoutingModule pour accéder
+  à ce composant Home
+  - Ajouter un lien dans la top-bar pour afficher la Home
+-->
+<mat-toolbar color="primary">
+    <a mat-button routerLink="/" routerLinkActive="mat-flat-button" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a mat-button routerLink="/contacts" routerLinkActive="mat-flat-button">Contacts</a>
+</mat-toolbar>
 <!-- <a [routerLink]="['contacts-add']" [routerLinkActive]="'current'">Ajouter</a> -->

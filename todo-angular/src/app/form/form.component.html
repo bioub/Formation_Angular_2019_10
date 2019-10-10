@@ -1,6 +1,7 @@
 <form (submit)="handleSubmit($event)">
   <p>
-    <input type="text" (input)="todo.text = $event.target.value">
+    <input type="text" [value]="todo.text" (input)="todo.text = $event.target.value">
     <button>+</button>
   </p>
+  <p>Vous avez saisi : {{todo.text}}</p>
 </form>

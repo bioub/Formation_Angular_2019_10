@@ -1,3 +1,10 @@
-<todo-form (todoChange)="add($event)"></todo-form>
+<todo-form [todo]="newTodo" (todoChange)="add($event)"></todo-form>
+
+<!--
+  <todo-form [todo]="newTodo" (todoChange)="newTodo = $event"></todo-form>
+  <todo-form [(todo)]="newTodo"></todo-form>
+  [()] Banana in box
+-->
+
 <todo-list [items]="todos" (delete)="delete($event)"></todo-list>
 

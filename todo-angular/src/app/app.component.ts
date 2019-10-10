@@ -21,12 +21,14 @@ export class AppComponent {
     completed: false,
   }];
 
+  newTodo = new Todo();
+
   add(todo: Todo) {
-    this.todos = [...this.todos, todo]; // Changement immuable
+    this.todos = [todo, ...this.todos]; // Changement immuable
     // this.todos.unshift(todo); // Changement muable
   }
 
   delete(todo: Todo) {
-    this.todos = this.todos.filter((t) => t !== todo);
+    this.todos = this.todos.filter((t) => t !== todo); // Changement immuable
   }
 }
