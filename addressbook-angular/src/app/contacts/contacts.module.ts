@@ -8,6 +8,7 @@ import { ContactsComponent } from "./contacts/contacts.component";
 import { ContactsDetailsComponent } from "./contacts-details/contacts-details.component";
 import { MatListModule } from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { MatButtonModule } from "@angular/material/button";
     ContactsComponent,
     ContactsDetailsComponent
   ],
-  imports: [CommonModule, ContactsRoutingModule, MatListModule, MatButtonModule]
+  imports: [SharedModule, ContactsRoutingModule, MatListModule, MatButtonModule]
 })
 export class ContactsModule {}

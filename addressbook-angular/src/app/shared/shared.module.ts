@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClockComponent } from './clock/clock.component';
+import { FormsModule } from '@angular/forms';
 // import {MatListModule} from '@angular/material/list';
 
 
@@ -11,6 +12,8 @@ import { ClockComponent } from './clock/clock.component';
   ],
   exports: [
     ClockComponent,
+    CommonModule,
+    FormsModule,
     // MatListModule
   ]
 })

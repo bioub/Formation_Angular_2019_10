@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsAddComponent implements OnInit {
 
+  contact = {
+    prenom: 'Romain',
+    nom: 'Bohdanowicz',
+  };
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  handleSubmit(event: Event) {
+    // event.preventDefault();
+  }
 }

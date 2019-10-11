@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Contact } from "../model";
-import { map, switchMap } from "rxjs/operators";
+import { map, switchMap, tap } from "rxjs/operators";
 import { Subscription } from "rxjs";
 import { ContactService } from "../contact.service";
 
@@ -23,6 +23,7 @@ export class ContactsDetailsComponent implements OnInit {
     // console.log(this.activatedRoute.snapshot.paramMap.get('id'));
     this.subscription = this.activatedRoute.paramMap
       .pipe(
+        // tap((paramMap) => console.log(paramMap.get("id"))),
         map(paramMap => paramMap.get("id")),
         switchMap(id => this.contactService.getById(id))
       )

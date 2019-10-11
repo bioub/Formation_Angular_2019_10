@@ -1,1 +1,20 @@
-<p>contacts-add works!</p>
+<form (submit)="handleSubmit($event)">
+  <p>
+      <label>Prénom</label>
+      <input type="text" name="prenom" #ngModelPrenom="ngModel" #inputPrenom [(ngModel)]="contact.prenom" required>
+      <span *ngIf="ngModelPrenom.invalid && ngModelPrenom.touched">Le prénom est obligatoire</span>
+  </p>
+  <p>
+      <label>Nom</label>
+      <input type="text" name="nom" [ngModel]="contact.nom" (ngModelChange)="contact.nom = $event">
+  </p>
+  <p>
+      <button type="submit">+</button>
+  </p>
+  <p>
+      Vous avez saisi {{contact.prenom}}
+  </p>
+  <p>
+      Vous avez saisi {{inputPrenom.value}}
+  </p>
+</form>
