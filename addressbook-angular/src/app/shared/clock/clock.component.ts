@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -10,7 +10,8 @@ export class ClockComponent implements OnInit, OnDestroy {
   now = new Date();
   private interval;
 
-  constructor() {  }
+  constructor() {
+  }
 
   ngOnInit() {
     this.interval = setInterval(() => {

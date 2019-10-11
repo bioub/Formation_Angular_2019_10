@@ -13,7 +13,7 @@ const routes: Routes = [{
     path: 'add', // URL -> /contacts/add
     component: ContactsAddComponent,
   }, {
-    // mettre les ids le plus bas possible
+    // mettre les routes avec params le plus bas possible
     path: ':id', // URL -> /contacts/123
     component: ContactsDetailsComponent,
   }]

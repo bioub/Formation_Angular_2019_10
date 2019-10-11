@@ -11,22 +11,24 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './core/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    SharedModule,
     ContactsModule,
+    SharedModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule, // route ** (en dernier)
   ],
   providers: [],
   bootstrap: [AppComponent]

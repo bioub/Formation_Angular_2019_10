@@ -3,7 +3,7 @@
 <mat-nav-list>
   <a [routerLink]="[c.id]"
      mat-list-item
-     *ngFor="let c of contacts">
+     *ngFor="let c of contacts$ | async">
      {{c.name}}
     </a>
 </mat-nav-list>

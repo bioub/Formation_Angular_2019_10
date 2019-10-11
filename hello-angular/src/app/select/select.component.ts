@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -13,6 +13,16 @@ export class SelectComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  @HostListener('click')
+  handleClickHost() {
+
+  }
+
+  @HostListener('document:click')
+  handleClickDocument() {
+
   }
 
   handleClick(item) {

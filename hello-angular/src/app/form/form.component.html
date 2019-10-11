@@ -1,7 +1,7 @@
 <form (submit)="handleSubmit($event)">
     <p>
         <label>Prénom</label>
-        <input type="text" name="prenom" [value]="contact.prenom" (input)="contact.prenom = $event.target.value">
+        <input type="text" name="prenom" #inputPrenom [value]="contact.prenom" (input)="contact.prenom = $event.target.value">
     </p>
     <p>
         <label>Nom</label>
@@ -9,5 +9,11 @@
     </p>
     <p>
         <button type="submit">+</button>
+    </p>
+    <p>
+        Vous avez saisi {{contact.prenom}}
+    </p>
+    <p>
+        Vous avez saisi {{inputPrenom.value}}
     </p>
 </form>

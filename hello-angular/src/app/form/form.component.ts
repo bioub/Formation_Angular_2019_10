@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DebugElement, ViewChild, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
+  @ViewChild('inputPrenom', {static: true}) inputPrenom: DebugElement;
+  // @ContentChild('')
 
   contact = {
     prenom: 'Romain',
@@ -19,5 +22,6 @@ export class FormComponent implements OnInit {
 
   handleSubmit(event: Event) {
     event.preventDefault();
+    console.log(this.inputPrenom.nativeElement.value);
   }
 }

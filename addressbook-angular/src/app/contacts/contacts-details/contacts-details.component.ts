@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from '../model';
 import { delay, switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contacts-details',
@@ -11,14 +12,17 @@ import { delay, switchMap } from 'rxjs/operators';
 })
 export class ContactsDetailsComponent implements OnInit {
 
+  contact: Contact;
+  subscription: Subscription;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
   ) { }
-  contact: Contact;
+
   ngOnInit() {
     // console.log(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.activatedRoute.paramMap
+    this.subscription = this.activatedRoute.paramMap
       .pipe(switchMap((paramMap) => {
         const id = paramMap.get('id');
         const url = 'https://jsonplaceholder.typicode.com/users/' + id;
@@ -30,4 +34,7 @@ export class ContactsDetailsComponent implements OnInit {
       });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpClient } from "@angular/common/http";
 import { Contact } from '../model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contacts-list',
@@ -10,7 +11,7 @@ import { Contact } from '../model';
 })
 export class ContactsListComponent implements OnInit {
 
-  contacts: Contact[] = [];
+  contacts$: Observable<Contact[]>;
 
   constructor(
     private title: Title,
@@ -19,10 +20,7 @@ export class ContactsListComponent implements OnInit {
 
   ngOnInit() {
     this.title.setTitle('Liste des contacts');
-    this.httpClient.get<Contact[]>('https://jsonplaceholder.typicode.com/users')
-        .subscribe((contacts) => {
-          this.contacts = contacts// .map((c) => ({id: c.id, name: c.name}));
-        });
+    this.contacts$ = this.httpClient.get<Contact[]>('https://jsonplaceholder.typicode.com/users');
   }
 
 }
