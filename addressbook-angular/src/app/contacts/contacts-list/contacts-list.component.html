@@ -1,9 +1,16 @@
 <a mat-raised-button routerLink="add">Ajouter</a>
 
-<mat-nav-list>
+<!-- <mat-nav-list>
   <a [routerLink]="[c.id]"
      mat-list-item
      *ngFor="let c of contacts$ | async">
+     {{c.name}}
+    </a>
+</mat-nav-list> -->
+<mat-nav-list>
+  <a [routerLink]="[c.id]"
+     mat-list-item
+     *ngFor="let c of contacts">
      {{c.name}}
     </a>
 </mat-nav-list>
